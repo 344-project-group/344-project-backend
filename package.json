@@ -1,13 +1,20 @@
 {
   "scripts": {
     "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "generate": "drizzle-kit generate",
+    "up": "drizzle-kit up",
+    "migrate-local": "bunx wrangler d1 execute 344-project-backend-d1 --local",
+    "migrate-remote": "bunx wrangler d1 execute 344-project-backend-d1 --remote"
   },
   "dependencies": {
+    "@libsql/client": "^0.6.0",
+    "drizzle-orm": "^0.30.10",
     "hono": "^4.4.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240403.0",
+    "drizzle-kit": "^0.21.4",
     "wrangler": "^3.47.0"
   }
 }

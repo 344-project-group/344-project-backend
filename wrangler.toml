@@ -1,6 +1,11 @@
 name = "344-project-backend"
 compatibility_date = "2023-12-01"
 
+[[d1_databases]]
+binding = "DB"                                       # i.e. available in your Worker on env.DB
+database_name = "344-project-backend-d1"
+database_id = "f50f85d9-0bd8-4e28-ad6a-43d89fbb50cc"
+
 # [vars]
 # MY_VAR = "my-variable"
 

@@ -1,0 +1,5 @@
+CREATE TABLE `test` (
+	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`name` text(256) NOT NULL,
+	`timestamp` text DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
