@@ -15,6 +15,13 @@
       "when": 1716837101677,
       "tag": "0001_boring_earthquake",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1716918621498,
+      "tag": "0002_light_manta",
+      "breakpoints": true
     }
   ]
 }

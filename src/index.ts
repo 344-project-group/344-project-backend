@@ -1,6 +1,6 @@
 import { drizzle } from 'drizzle-orm/d1'
 import { Hono } from 'hono'
-import { test } from './db/schema'
+import { test, tasks } from './db/schema'
 
 export type Env = {
   DB: D1Database
@@ -16,6 +16,17 @@ app.get('/test', async (context) => {
   const db = drizzle(context.env.DB);
   const content = await context.req.json();
   const result = await db.insert(test).values(content).returning();
+  return context.json(result)
+})
+
+app.get('/tasks', async (context) => {
+  const db = drizzle(context.env.DB);
+  const result = await db.select().from(tasks).all();
+  return context.json(result)
+}).post('/tasks', async (context) => {
+  const db = drizzle(context.env.DB);
+  const content = await context.req.json();
+  const result = await db.insert(tasks).values(content).returning();
   return context.json(result)
 })
 
