@@ -18,3 +18,9 @@ export const tasks = sqliteTable('tasks', {
     end_time: text('end_time').notNull(),
     date: text('date').notNull(),
 });
+
+export const user_credentials = sqliteTable('user_credentials', {
+    id: integer('id', { mode: 'number' }).primaryKey({ autoIncrement: true }),
+    password: text('password', { length: 256 }).notNull(),
+    email: text('email', { length: 256 }).notNull(),
+});
